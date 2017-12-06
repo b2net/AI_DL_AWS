@@ -23,3 +23,5 @@ https://github.com/awslabs/aws-ai-bootcamp-labs
 https://github.com/dmlc/mxnet-notebooks
 
 https://aws.amazon.com/de/campaigns/aibootcampsgermany/
+
+[based on "Hands-On Machine Learning with Scikit-Learn & TensorFlow"](https://github.com/bjpcjp/scikit-and-tensorflow-workbooks)
