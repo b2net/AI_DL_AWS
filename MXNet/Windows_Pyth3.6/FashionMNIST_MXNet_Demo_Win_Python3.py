@@ -17,7 +17,7 @@
 
 # ### Load dependencies
 # 
-# Add wget64.exe to C:\Windows
+# #Add wget64.exe to C:\Windows
 
 # In[1]:
 
@@ -152,7 +152,7 @@ mod.fit(train_data_iter,                            # train data
 
 # ### Run predictions for 10 example elements
 
-# In[8]:
+# In[7]:
 
 
 pred_data_iter = mx.io.NDArrayIter(data={'fashion_data': to4d(val_img)[0:100]}, batch_size=100)
@@ -170,7 +170,7 @@ for x in range(10, 20):
     print("Predicted fashion label for image %s is %s  " % (x, np.where(pred_digits[x,0:10] == pred_digits[x,0:10].max())[0]))
 
 
-# In[9]:
+# In[8]:
 
 
 fashion_labels
@@ -181,9 +181,12 @@ fashion_labels
 # In[10]:
 
 
-get_ipython().system('wget64 -O predict1.jpg https://images-na.ssl-images-amazon.com/images/I/81OaXwn1x4L._UX679_.jpg')
-get_ipython().system('wget64 -O predict2.jpg https://images-eu.ssl-images-amazon.com/images/I/31TcgNHsbIL._AC_UL260_SR200,260_.jpg')
-get_ipython().system('wget64 -O predict3.jpg https://images-eu.ssl-images-amazon.com/images/I/41hWhZBIc3L._AC_UL260_SR200,260_.jpg')
+#!wget64 -O predict1.jpg https://images-na.ssl-images-amazon.com/images/I/81OaXwn1x4L._UX679_.jpg
+#!wget64 -O predict2.jpg https://images-eu.ssl-images-amazon.com/images/I/31TcgNHsbIL._AC_UL260_SR200,260_.jpg
+#!wget64 -O predict3.jpg https://images-eu.ssl-images-amazon.com/images/I/41hWhZBIc3L._AC_UL260_SR200,260_.jpg
+urllib.request.urlretrieve('https://images-na.ssl-images-amazon.com/images/I/81OaXwn1x4L._UX679_.jpg', 'predict1.jpg')
+urllib.request.urlretrieve('https://images-eu.ssl-images-amazon.com/images/I/31TcgNHsbIL._AC_UL260_SR200,260_.jpg', 'predict2.jpg')
+urllib.request.urlretrieve('https://images-eu.ssl-images-amazon.com/images/I/41hWhZBIc3L._AC_UL260_SR200,260_.jpg', 'predict3.jpg')
 
 
 # ### Load model from checkpoint for prediction
