@@ -147,7 +147,9 @@ mod.fit(train_data_iter,                            # train data
         optimizer_params={'learning_rate' : 0.1},   # use fixed learning rate
         eval_metric=mx.metric.Accuracy(),           # report accuracy during training
         num_epoch=10,                               # train for at most 10 dataset passes
-        epoch_end_callback = mx.callback.do_checkpoint('fashion_mnist')) 
+        epoch_end_callback = mx.callback.do_checkpoint('fashion_mnist'), 
+        force_rebind = True,
+        force_init = True) 
 
 
 # ### Run predictions for 10 example elements
@@ -178,12 +180,9 @@ fashion_labels
 
 # ### Downloading images for prediction from amazon.com
 
-# In[10]:
+# In[9]:
 
 
-#!wget64 -O predict1.jpg https://images-na.ssl-images-amazon.com/images/I/81OaXwn1x4L._UX679_.jpg
-#!wget64 -O predict2.jpg https://images-eu.ssl-images-amazon.com/images/I/31TcgNHsbIL._AC_UL260_SR200,260_.jpg
-#!wget64 -O predict3.jpg https://images-eu.ssl-images-amazon.com/images/I/41hWhZBIc3L._AC_UL260_SR200,260_.jpg
 urllib.request.urlretrieve('https://images-na.ssl-images-amazon.com/images/I/81OaXwn1x4L._UX679_.jpg', 'predict1.jpg')
 urllib.request.urlretrieve('https://images-eu.ssl-images-amazon.com/images/I/31TcgNHsbIL._AC_UL260_SR200,260_.jpg', 'predict2.jpg')
 urllib.request.urlretrieve('https://images-eu.ssl-images-amazon.com/images/I/41hWhZBIc3L._AC_UL260_SR200,260_.jpg', 'predict3.jpg')
@@ -191,14 +190,14 @@ urllib.request.urlretrieve('https://images-eu.ssl-images-amazon.com/images/I/41h
 
 # ### Load model from checkpoint for prediction
 
-# In[11]:
+# In[10]:
 
 
 prediction_model_check_point = 10
 prediction_model_prefix = 'fashion_mnist'
 prediction_sym, arg_params, aux_params = mx.model.load_checkpoint(prediction_model_prefix, prediction_model_check_point)
 prediction_model = mx.mod.Module(symbol=prediction_sym, data_names=['fashion_data'], label_names=['fashion_item_label'])
-prediction_model.bind(for_training=False, data_shapes=[('fashion_data', (1,1,28,28))])
+prediction_model.bind(for_training=False, data_shapes=[('fashion_data', (1,1,28,28))], label_shapes = [('fashion_item_label', (1,))])
 prediction_model.set_params(arg_params=arg_params, aux_params=aux_params, allow_missing=True)
 
 # define prediction function
@@ -217,7 +216,7 @@ def predict_fashion(img):
 
 # ### Predict labels for downloaded images
 
-# In[12]:
+# In[11]:
 
 
 import skimage.transform
@@ -231,7 +230,7 @@ for i in range(3):
         img= np.array (np.mean(img, -1))
 
         # resize image
-        img = skimage.transform.resize(img, (28, 28))
+        img = skimage.transform.resize(img, (28, 28), mode ='reflect')
 
 
         predict_fashion(img)
