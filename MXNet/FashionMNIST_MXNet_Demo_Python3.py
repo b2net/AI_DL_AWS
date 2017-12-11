@@ -16,8 +16,6 @@
 # ***
 
 # ### Load dependencies
-# 
-# #Add wget64.exe to C:\Windows
 
 # In[1]:
 
