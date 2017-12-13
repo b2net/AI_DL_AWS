@@ -1,12 +1,6 @@
 
 # coding: utf-8
 
-# In[1]:
-
-
-get_ipython().run_cell_magic('html', '', '<style>\ntable {float:left}\n</style>')
-
-
 # # Data description
 # **Data from [Zalando GitHub page](https://github.com/zalandoresearch/fashion-mnist)**
 # 
@@ -31,7 +25,7 @@ get_ipython().run_cell_magic('html', '', '<style>\ntable {float:left}\n</style>'
 # | 6 | Shirt |
 # | 7 | Sneaker |
 # | 8 | Bag |
-# | 9 | Ankle boot |.  
+# | 9 | Ankle boot |
 
 # ### Load training and test datasets
 # `download_data` downloads data from a given `url`, if no file with the same name has been downloaded so far,  
