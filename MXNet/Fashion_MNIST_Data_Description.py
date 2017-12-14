@@ -33,14 +33,20 @@
 # 
 # With these functions we download data from GitHub and create training/test datasets/label.
 
-# In[2]:
+# In[1]:
 
 
 import os
 import gzip
 import struct
+import operator
 import numpy as np
 import urllib.request
+import matplotlib.pyplot as plt
+
+
+# In[2]:
+
 
 def download_data(url, force_download=True): 
     fname = url.split("/")[-1]
@@ -48,18 +54,25 @@ def download_data(url, force_download=True):
         urllib.request.urlretrieve(url, fname)
     return fname
 
-def read_data(label, image):
+def read_Fashion_MNIST_data_compact(label, image):
     base_url = 'https://github.com/zalandoresearch/fashion-mnist/raw/master/data/fashion/'
-    with gzip.open(download_data(base_url+label, os.path.join('data',label))) as flbl:
-        magic, num = struct.unpack(">II", flbl.read(8))
+    
+    with gzip.open(download_data(base_url + label, False)) as flbl:
+        flbl.read(8)
         label = np.fromstring(flbl.read(), dtype=np.int8)
-    with gzip.open(download_data(base_url+image, os.path.join('data',image)), 'rb') as fimg:
+        
+    with gzip.open(download_data(base_url + image, False), 'rb') as fimg:
+        # will look up "struct.unpack" later
         magic, num, rows, cols = struct.unpack(">IIII", fimg.read(16))
         image = np.fromstring(fimg.read(), dtype=np.uint8).reshape(len(label), rows, cols)
+        
     return (label, image)
 
-(train_lbl, train_img) = read_data('train-labels-idx1-ubyte.gz', 'train-images-idx3-ubyte.gz')
-(val_lbl, val_img) = read_data('t10k-labels-idx1-ubyte.gz', 't10k-images-idx3-ubyte.gz')
+
+(train_lbl, train_img) = read_Fashion_MNIST_data_compact('train-labels-idx1-ubyte.gz', 'train-images-idx3-ubyte.gz')
+(val_lbl, val_img)     = read_Fashion_MNIST_data_compact('t10k-labels-idx1-ubyte.gz', 't10k-images-idx3-ubyte.gz')
+
+fashion_labels=['T-shirt/top','Trouser','Pullover','Dress','Coat','Sandal','Shirt','Sneaker','Bag','Ankle boot']
 
 
 # Now that the data are loaded we want to know the shapes of train and test datasets: 
@@ -75,42 +88,44 @@ print("Test labels and dataset shapes:  ", val_lbl.shape, ",", val_img.shape)
 # 
 # Let us take a look at the first 7 images and their labels:
 
-# In[5]:
+# In[4]:
 
 
-import matplotlib.pyplot as plt
+pict_number = 10
 
-for i in range(7):
-    plt.subplot(1,7,i+1)
+for i in range(pict_number):
+    plt.subplot(1,pict_number,i+1)
     dsp_img= train_img[i]
     plt.imshow(dsp_img, cmap='Greys')
     plt.axis('off')
 
 plt.show()
-print('label: %s' % (train_lbl[0:7],))
+
+print('labels: %s' % (train_lbl[0:pict_number],))
+print(operator.itemgetter(*train_lbl[0:pict_number])(fashion_labels))
 
 
 # Now let us see how, for example, the 1st image is represented in the dataset. Each pixel is described by one `uint8` number - an amount of light, that is, it carries only intensity information.
 
-# In[6]:
+# In[5]:
 
 
-train_img[0]
+train_img[0, 0:7]
 
 
 # Since all the entry values are now spread from 0 to 255, for the future we will want to normalize our dataset to [0,1], dividing each entry by 255.
 
-# In[7]:
+# In[6]:
 
 
-train_img = train_img/255
-val_img = val_img/255
-train_img[1]
+train_img = train_img / 255
+val_img = val_img / 255
+train_img[0, 0:7]
 
 
 # Let us count, how many items with a certain label there are in the training and test sets. We see that there are 6000 examples of each product type in the training set and 1000 - in the test set. That is, the distribution is homogenious.
 
-# In[8]:
+# In[7]:
 
 
 print("Distribution of items across labels for training:", np.bincount(train_lbl))
