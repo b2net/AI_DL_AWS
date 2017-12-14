@@ -110,8 +110,9 @@ for i in range(10):
 
 plt.show()
 
-print('labels: %s' % (train_lbl[0:10],))
-print(operator.itemgetter(*train_lbl[0:10])(fashion_labels))
+pict_number = 10
+print('labels: %s' % (train_lbl[0:pict_number],))
+print(operator.itemgetter(*train_lbl[0:pict_number])(fashion_labels))
 
 
 # ### Build MXNet model
