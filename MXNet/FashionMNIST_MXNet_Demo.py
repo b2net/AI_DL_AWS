@@ -244,7 +244,7 @@ for i in range(pred_number):
 plt.show()
 
 for x in range(pred_start, pred_start + pred_number):
-    label = np.where(pred_digits[x,0:10] == pred_digits[x,0:10].max())[0]
+    label = np.where(pred_digits[x,0:pred_number] == pred_digits[x,0:pred_number].max())[0]
     print("Predicted fashion label for image %s is %s (%s)" % (x, label, fashion_labels[label[0]]))
 
 
