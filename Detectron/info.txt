@@ -1,0 +1,5 @@
+Tested on Deep Learning AMI Ubuntu Linux - 2.5_Jan2018 (ami-1aa7c063)
+https://aws.amazon.com/marketplace/pp/B06VSPXKDX
+
+with Python 2.7,
+trained Mask R-CNN model with ResNet-101-FPN backbone from the model zoo.
