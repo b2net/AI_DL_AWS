@@ -1,5 +1,9 @@
 #!/usr/bin/env python2
 
+# Tested on Deep Learning AMI Ubuntu Linux - 2.5_Jan2018 (ami-1aa7c063)
+# https://aws.amazon.com/marketplace/pp/B06VSPXKDX
+# Instance Type: p2.xlarge
+# with Python 2.7
 """Perform inference on a single image or all images with a certain extension
 (e.g., .jpg) in a folder.
 """
