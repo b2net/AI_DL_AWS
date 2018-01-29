@@ -1,20 +1,5 @@
 #!/usr/bin/env python2
 
-# Copyright (c) 2017-present, Facebook, Inc.
-#
-# Licensed under the Apache License, Version 2.0 (the "License");
-# you may not use this file except in compliance with the License.
-# You may obtain a copy of the License at
-#
-#     http://www.apache.org/licenses/LICENSE-2.0
-#
-# Unless required by applicable law or agreed to in writing, software
-# distributed under the License is distributed on an "AS IS" BASIS,
-# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-# See the License for the specific language governing permissions and
-# limitations under the License.
-##############################################################################
-
 """Perform inference on a single image or all images with a certain extension
 (e.g., .jpg) in a folder.
 """
@@ -84,6 +69,13 @@ def parse_args():
     parser.add_argument(
         'im_or_folder', help='image or folder of images', default=None
     )
+    parser.add_argument(
+        '--output-ext',
+        dest='output_ext',
+        help='extension for visualization files',
+        default='pdf',
+        type=str
+    )
     if len(sys.argv) == 1:
         parser.print_help()
         sys.exit(1)
@@ -136,7 +128,8 @@ def main(args):
             box_alpha=0.3,
             show_class=True,
             thresh=0.7,
-            kp_thresh=2
+            kp_thresh=2,
+            ext = args.output_ext
         )
 
 
