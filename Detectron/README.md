@@ -16,7 +16,7 @@ of the same extension: JPG or PNG. We will use `JPG`.
 In our case `JPG` and `/home/ubuntu/image_results/`.  
 5. Choose a model from the [model zoo](https://github.com/facebookresearch/Detectron/blob/master/MODEL_ZOO.md). In this example, we're using an end-to-end trained Mask 
 R-CNN model with a ResNet-101-FPN backbone.
-4. Run the following command:
+4. Run the following command (from any directory):
 ```
 python2 /home/ubuntu/src/detectron/tools/infer_simple_new.py \
     --cfg /home/ubuntu/src/detectron/configs/12_2017_baselines/e2e_mask_rcnn_R-101-FPN_2x.yaml \
