@@ -21,7 +21,7 @@ echo Testing the Caffe2 installation:
 cd ~ && python -c 'from caffe2.python import core' 2>/dev/null && echo "Success" || echo "Failure"
 
 # Install Python dependencies
-pip install numpy pyyaml matplotlib opencv-python>=3.0 setuptools Cython mock
+sudo -H pip install numpy pyyaml matplotlib opencv-python>=3.0 setuptools Cython mock
 
 # Install COCO API
 COCOAPI=/home/ubuntu/src/cocoapi
