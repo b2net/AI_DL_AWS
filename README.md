@@ -1,7 +1,7 @@
 # AI_DL_AWS
 materials around AI, Deep learning, AWS ...
 
-# some Books:
+# Some books:
 [PDFs](Books)
 
 (+) https://www.amazon.de/dp/B01MRVFGX4/ref=dp-kindle-redirect?_encoding=UTF8&btkr=1
@@ -10,7 +10,7 @@ materials around AI, Deep learning, AWS ...
 
 (+) http://www.springer.com/de/book/9783642247965
 
-# useful Links:
+# Useful Links:
 
 https://aws.amazon.com/de/aml/getting-started/
 
@@ -25,3 +25,7 @@ https://github.com/dmlc/mxnet-notebooks
 https://aws.amazon.com/de/campaigns/aibootcampsgermany/
 
 [based on "Hands-On Machine Learning with Scikit-Learn & TensorFlow"](https://github.com/bjpcjp/scikit-and-tensorflow-workbooks)
+
+# Models
+
+[Model Zoo - Discover open source deep learning code and pretrained models](https://modelzoo.co/)
