@@ -29,3 +29,18 @@ https://aws.amazon.com/de/campaigns/aibootcampsgermany/
 # Models
 
 [Model Zoo - Discover open source deep learning code and pretrained models](https://modelzoo.co/)
+
+
+# Detectron materials
+
+## Mask R-CNN
+
+[Mask R-CNN for Object Detection and Segmentation - implementation on Python 3, Keras, and TensorFlow](https://github.com/matterport/Mask_RCNN)
+
+[Pytorch implementation of Mask R-CNN](https://github.com/multimodallearning/pytorch-mask-rcnn)
+
+
+# Pytorch
+
+[Intro to PyTorch with image classification on a Fashion clothes dataset (Fashion MNIST dataset - Zalando)](https://medium.com/ml2vec/intro-to-pytorch-with-image-classification-on-a-fashion-clothes-dataset-e589682df0c5)
+
