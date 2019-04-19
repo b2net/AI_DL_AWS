@@ -39,6 +39,9 @@ https://aws.amazon.com/de/campaigns/aibootcampsgermany/
 
 [Pytorch implementation of Mask R-CNN](https://github.com/multimodallearning/pytorch-mask-rcnn)
 
+# Frameworks
+
+[Demo of running NNs across different frameworks - Training Time(s)](https://github.com/ilkarman/DeepLearningFrameworks)
 
 # Pytorch
 
