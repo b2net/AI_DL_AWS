@@ -6,6 +6,9 @@ materials around AI, Deep learning, AWS ...
 
 [Demo of running NNs across different frameworks - Training Time(s)](https://github.com/ilkarman/DeepLearningFrameworks)
 
+## Platforms
+[deepdetect](https://www.deepdetect.com/)
+
 ## Models
 
 [Model Zoo - Discover open source deep learning code and pretrained models](https://modelzoo.co/)
