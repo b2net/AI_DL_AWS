@@ -9,7 +9,11 @@ materials around AI, Deep learning, AWS ...
 ## Models
 
 [Model Zoo - Discover open source deep learning code and pretrained models](https://modelzoo.co/)
+
 [The 9 Deep Learning Papers You Need To Know About](https://adeshpande3.github.io/The-9-Deep-Learning-Papers-You-Need-To-Know-About.html)
+
+## Papers
+[A paper list of object detection using deep learning](https://github.com/hoya012/deep_learning_object_detection)
 
 
 # Some books:
