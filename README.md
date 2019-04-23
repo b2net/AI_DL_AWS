@@ -38,7 +38,7 @@ https://aws.amazon.com/de/campaigns/aibootcampsgermany/
 
 
 
-# Detectron materials
+# CNN Models
 
 ## Mask R-CNN
 
@@ -47,7 +47,8 @@ https://aws.amazon.com/de/campaigns/aibootcampsgermany/
 [Pytorch implementation of Mask R-CNN](https://github.com/multimodallearning/pytorch-mask-rcnn)
 
 
-# Pytorch
+# Frameworks
+## Pytorch
 
 [Intro to PyTorch with image classification on a Fashion clothes dataset (Fashion MNIST dataset - Zalando)](https://medium.com/ml2vec/intro-to-pytorch-with-image-classification-on-a-fashion-clothes-dataset-e589682df0c5)
 
