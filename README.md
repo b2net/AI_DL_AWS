@@ -1,14 +1,24 @@
 # AI_DL_AWS
 materials around AI, Deep learning, AWS ...
 
+# Overview
+## Frameworks
+
+[Demo of running NNs across different frameworks - Training Time(s)](https://github.com/ilkarman/DeepLearningFrameworks)
+
+## Models
+
+[Model Zoo - Discover open source deep learning code and pretrained models](https://modelzoo.co/)
+
+
 # Some books:
-[PDFs](Books)
 
 (+) https://www.amazon.de/dp/B01MRVFGX4/ref=dp-kindle-redirect?_encoding=UTF8&btkr=1
 
 (+) https://www.amazon.com/Artificial-Intelligence-Humans-Learning-Networks/dp/1505714346
 
 (+) http://www.springer.com/de/book/9783642247965
+
 
 # Useful Links:
 
@@ -26,9 +36,6 @@ https://aws.amazon.com/de/campaigns/aibootcampsgermany/
 
 [based on "Hands-On Machine Learning with Scikit-Learn & TensorFlow"](https://github.com/bjpcjp/scikit-and-tensorflow-workbooks)
 
-# Models
-
-[Model Zoo - Discover open source deep learning code and pretrained models](https://modelzoo.co/)
 
 
 # Detectron materials
@@ -39,9 +46,6 @@ https://aws.amazon.com/de/campaigns/aibootcampsgermany/
 
 [Pytorch implementation of Mask R-CNN](https://github.com/multimodallearning/pytorch-mask-rcnn)
 
-# Frameworks
-
-[Demo of running NNs across different frameworks - Training Time(s)](https://github.com/ilkarman/DeepLearningFrameworks)
 
 # Pytorch
 
