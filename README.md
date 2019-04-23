@@ -9,6 +9,7 @@ materials around AI, Deep learning, AWS ...
 ## Models
 
 [Model Zoo - Discover open source deep learning code and pretrained models](https://modelzoo.co/)
+[The 9 Deep Learning Papers You Need To Know About](https://adeshpande3.github.io/The-9-Deep-Learning-Papers-You-Need-To-Know-About.html)
 
 
 # Some books:
